@@ -56,4 +56,40 @@ dotnet run
 ### Arquitetura de Software Utilizada
 - MVC Básico com adição do Service, já que , por boas práticas, a separação e simplicação do código torna a aplicação mais simples, escalável e mais fácil de manutenção.
 - É uma aplicação relativamente pequena, portanto não foi necessário abstrações das funções relacionadas ao Banco de dados.
-  
+
+
+## Fluxo de Git Usado
+- Não foi necessário usar git flow ou qualquer tipo de sistema de branch/nomeação e as respectivas práticas de proteção a branch com PR's, já que a aplicação é pequena e só há uma pessoa desenvolvendo, no entanto, foi usado uma padronização dos commits
+Exemplo:
+## 💻 Exemplos
+
+<table>
+  <thead>
+    <tr>
+      <th>Comando Git</th>
+      <th>Resultado no GitHub</th>
+    </tr>
+  </thead>
+ <tbody>
+    <tr>
+      <td>
+        <code>git commit -m ":tada: Commit inicial"</code>
+      </td>
+      <td>🎉 Commit inicial</td>
+    </tr>
+    <tr>
+      <td>
+        <code>git commit -m ":books: docs: Atualizaçao do README"</code>
+      </td>
+      <td>📚 docs: Atualizaçao do README</td>
+    </tr>
+    <tr>
+      <td>
+        <code>git commit -m ":bug: fix: Loop infinito na linha 50"</code>
+      </td>
+      <td>🐛 fix: Loop infinito na linha 50</td>
+    </tr>
+
+    
+  </tbody>
+</table>
