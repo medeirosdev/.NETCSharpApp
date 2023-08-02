@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Importe seus Produtos</h1>
+    <form asp-action="ImportarProduto" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="file">Selecione o arquivo CSV:</label>
+            <input type="file" name="file" id="file" class="form-control-file" />
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Importar</button>
+    </form>
+</div>
+
