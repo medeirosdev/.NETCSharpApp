@@ -6,8 +6,14 @@
     <h1 class="display-4">Importe seus Produtos</h1>
     <form asp-action="ImportarProduto" method="post" enctype="multipart/form-data">
         <div class="form-group">
+            &nbsp;
+            &nbsp;
             <label for="file">Selecione o arquivo CSV:</label>
+            <br>
+            &nbsp;
             <input type="file" name="file" id="file" class="form-control-file" />
+            <br>
+            &nbsp;
         </div>
         <button type="submit" class="btn btn-primary mt-3">Importar</button>
     </form>
