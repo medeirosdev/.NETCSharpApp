@@ -11,37 +11,48 @@
 </head>
 <body>
     <div class="text-center">
-        <h1>Produtos Importados</h1>
-        @if (Model.Count > 0)
-        {
-            <table>
+    <h1>Produtos Importados</h1>
+    @if (Model.Count > 0)
+    {
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Tipo Código</th>
+                <th>Descrição</th>
+                <th>Estoque</th>
+                <th>Preço Venda</th>
+                <th>Preço Custo</th>
+                <th>Data/Hora Cadastro</th>
+                <th>Valor Total do Estoque</th>
+            </tr>
+            @{
+                decimal totalEstoque = 0;
+            }
+            @foreach (var produto in Model)
+            {
+                decimal valorTotalEstoque = produto.Estoque * produto.PrecoCusto;
+                totalEstoque += valorTotalEstoque;
                 <tr>
-                    <th>ID</th>
-                    <th>Tipo Código</th>
-                    <th>Descrição</th>
-                    <th>Estoque</th>
-                    <th>Preço Venda</th>
-                    <th>Preço Custo</th>
-                    <th>Data/Hora Cadastro</th>
+                    <td>@produto.Id</td>
+                    <td>@produto.TipoCodigo</td>
+                    <td>@produto.Descricao</td>
+                    <td>@produto.Estoque.ToString("0.###")</td>
+                        <td>@produto.PrecoVenda.ToString("0.###")</td>
+                        <td>@produto.PrecoCusto.ToString("0.###")</td>
+                    <td>@produto.DataHoraCadastro</td>
+                        <td>@valorTotalEstoque.ToString("0.#####")</td>
                 </tr>
-                @foreach (var produto in Model)
-                {
-                    <tr>
-                        <td>@produto.Id</td>
-                        <td>@produto.TipoCodigo</td>
-                        <td>@produto.Descricao</td>
-                        <td>@produto.Estoque</td>
-                        <td>@produto.PrecoVenda</td>
-                        <td>@produto.PrecoCusto</td>
-                        <td>@produto.DataHoraCadastro</td>
-                    </tr>
-                }
-            </table>
-        }
-        else
-        {
-            <p>Nenhum produto encontrado.</p>
-        }
-    </div>
+            }
+            <tr>
+                <td colspan="7" style="text-align: right;"><strong>Total Estoque:</strong></td>
+                    <td><strong>@totalEstoque.ToString("0.####")</strong></td>
+            </tr>
+        </table>
+    }
+    else
+    {
+        <p>Nenhum produto encontrado.</p>
+    }
+</div>
 </body>
 </html>
