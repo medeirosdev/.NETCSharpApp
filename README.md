@@ -10,6 +10,8 @@ Instale em seu computador se não tiver esses requisitos, estes são essenciais 
 - [.NET Core SDK](https://dotnet.microsoft.com/download) (versão 3.1 ou superior)
 - [MySQL Server](https://dev.mysql.com/downloads/) (ou PostgreSQL, ou outro banco de dados relacional)
 
+## Diagrama Do Projeto
+![Texto alternativo da imagem](projetoautomahelp.png)
 
 ## Passo 1: Clonar o repositório
 Clone este repositório em sua máquina local usando o seguinte comando:
