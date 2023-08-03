@@ -33,9 +33,12 @@ WebApplication1/NovaPasta/ProdutoService
 ## Passo 3 : Inicie o Projeto
 Se estiver no Visual Studio, apenas clique no topo da IDE na seta verde, se estiver apenas por linha de comando, use:
 ```bash
+dotnet build
+```
+```bash
 dotnet run
 ```
-
+- Lembre-se de entrar dentro da Pasta do Projeto!
 
 ### Guia de Rotas
 
