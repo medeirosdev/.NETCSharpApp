@@ -10,6 +10,8 @@ Instale em seu computador se não tiver esses requisitos, estes são essenciais 
 - [.NET Core SDK](https://dotnet.microsoft.com/download) (versão 3.1 ou superior)
 - [MySQL Server](https://dev.mysql.com/downloads/) (ou PostgreSQL, ou outro banco de dados relacional)
 
+## Diagrama Do Projeto
+![Texto alternativo da imagem](projetoautomahelp.png)
 
 ## Passo 1: Clonar o repositório
 Clone este repositório em sua máquina local usando o seguinte comando:
@@ -28,14 +30,33 @@ public String ConnectionString = "server=127.0.0.1;user=root;database=testwebapi
 Localização da String: 
 WebApplication1/NovaPasta/ProdutoService
 
+## Passo 4 : Crie a tabela com esse comando para MySQL
+```
+CREATE TABLE produto (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tipocodigo INT,
+    descricao VARCHAR(60),
+    estoque DECIMAL(15, 4),
+    precovenda DECIMAL(15, 2),
+    precocusto DECIMAL(15, 4),
+    datahoracadastro TIMESTAMP
+);
+```
+
 ## Passo 3 : Inicie o Projeto
 Se estiver no Visual Studio, apenas clique no topo da IDE na seta verde, se estiver apenas por linha de comando, use:
 ```bash
+dotnet build
+```
+```bash
 dotnet run
 ```
-
+- Lembre-se de entrar dentro da Pasta do Projeto!
 
 ### Guia de Rotas
+- Explicação: O Usuário irá começar na /Home/, na qual poderá enviar um arquivo CSV para o back-end através da rota /Home/ImportarProduto, Sendo este um método Http POST.
+- O Usuário poderá ver todos os produtos importados na rota /Home/ProdutosImportados2.
+- /Home/Sobre é um Resumo do projeto, e o restante rotas de validação de erro e sucesso.
 
 | Rota                      | Descrição                                           |
 | ------------------------- | --------------------------------------------------- |
