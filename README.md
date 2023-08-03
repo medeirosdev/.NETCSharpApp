@@ -30,7 +30,7 @@ public String ConnectionString = "server=127.0.0.1;user=root;database=testwebapi
 Localização da String: 
 WebApplication1/NovaPasta/ProdutoService
 
-## Passo 4 : Crie a tabela com esse comando para MySQL
+## Passo 3 : Crie a tabela com esse comando para MySQL
 ```
 CREATE TABLE produto (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -43,7 +43,7 @@ CREATE TABLE produto (
 );
 ```
 
-## Passo 3 : Inicie o Projeto
+## Passo 4 : Inicie o Projeto
 Se estiver no Visual Studio, apenas clique no topo da IDE na seta verde, se estiver apenas por linha de comando, use:
 ```bash
 dotnet build
