@@ -41,6 +41,9 @@ dotnet run
 - Lembre-se de entrar dentro da Pasta do Projeto!
 
 ### Guia de Rotas
+- Explicação: O Usuário irá começar na /Home/, na qual poderá enviar um arquivo CSV para o back-end através da rota /Home/ImportarProduto, Sendo este um método Http POST.
+- O Usuário poderá ver todos os produtos importados na rota /Home/ProdutosImportados2.
+- /Home/Sobre é um Resumo do projeto, e o restante rotas de validação de erro e sucesso.
 
 | Rota                      | Descrição                                           |
 | ------------------------- | --------------------------------------------------- |
