@@ -4,13 +4,27 @@ using System.Globalization;
 using System.IO;
 using WebApplication1.Models;
 using MySql.Data.MySqlClient;
+using CsvHelper;
+using Microsoft.AspNetCore.Mvc;
+using Npgsql;
+using System.Diagnostics;
+using System.Formats.Asn1;
+using System.Globalization;
+using WebApplication1.Models;
+using Dapper;
+using System.Diagnostics.Metrics;
+using System;
+using CsvHelper.Configuration;
+using MySql.Data.MySqlClient;
+using WebApplication1.NovaPasta;
 
 namespace WebApplication1.NovaPasta
 {
     public class ProdutoService
-    {
+    {   // Altere aqui a sua Connection String!!
         public String ConnectionString = "server=127.0.0.1;user=root;database=testwebapi2;port=3306;password=gui167";
 
+        //Transforma o arquivo CSV em Lista para ser guardado no banco de dados
         public List<Produto> CsvToList(IFormFile file) {
             List<Produto> produtos;
             using (var streamReader = new StreamReader(file.OpenReadStream()))
@@ -31,7 +45,7 @@ namespace WebApplication1.NovaPasta
             }
         }
 
-
+        //Salva a lista de produtos no banco de dados.
         public void SalvarListaBD(List<Produto> produtoList , MySqlConnection connection)
         {
             var produtosImportados = new List<Produto>();
@@ -72,8 +86,8 @@ namespace WebApplication1.NovaPasta
             connection.Close();
 
         }
-        
-        public List<Produto> getAllProducts()
+        //Requisição para o banco de dados que captura todos os itens da tabela, sem tratamento.
+        public List<Produto> GetAllProducts()
         {
             List<Produto> produtos = new List<Produto>();
 
@@ -107,6 +121,10 @@ namespace WebApplication1.NovaPasta
             }
             return produtos;
         }
+
+
+        
+            
 
         
 

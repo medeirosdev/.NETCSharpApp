@@ -34,14 +34,21 @@ namespace WebApplication1.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ImportarProduto(IFormFile file)
+
         {
-           //Simples validação do arquivo csv que vem do Form de importar
+           //Simples validação do arquivo csv que vem do Form de importar.
             if (file == null || file.Length <= 0)
             {
                 return RedirectToAction("ErrorView");
             }
             else
             {
+                // Verificar a extensão do arquivo.
+                if (Path.GetExtension(file.FileName).ToLower() != ".csv")
+                  {
+                     return RedirectToAction("ErrorView");
+                  }
+                
 
                 List<Produto> produtoList = produtoService.CsvToList(file);
 
@@ -56,26 +63,11 @@ namespace WebApplication1.Controllers
             }
 
         }
-        // POST: Home/ListadeProdutos
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult ListadeProdutos()
-        {
-             
-            List<Produto> produtos = produtoService.getAllProducts();
-
-            if (produtos.Count == 0)
-            { 
-                return RedirectToAction("ProdutoError");
-            }
-
-            return RedirectToAction("ProdutosImportados", produtos);
-
-        }
-
+        
+        // Home/ListadeProdutos2
         public IActionResult ProdutosImportados2()
         {
-            List<Produto> produtos = produtoService.getAllProducts();
+            List<Produto> produtos = produtoService.GetAllProducts();
 
             if (produtos.Count == 0)
             {
