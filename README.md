@@ -30,6 +30,19 @@ public String ConnectionString = "server=127.0.0.1;user=root;database=testwebapi
 Localização da String: 
 WebApplication1/NovaPasta/ProdutoService
 
+## Passo 4 : Crie a tabela com esse comando para MySQL
+```
+CREATE TABLE produto (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tipocodigo INT,
+    descricao VARCHAR(60),
+    estoque DECIMAL(15, 4),
+    precovenda DECIMAL(15, 2),
+    precocusto DECIMAL(15, 4),
+    datahoracadastro TIMESTAMP
+);
+```
+
 ## Passo 3 : Inicie o Projeto
 Se estiver no Visual Studio, apenas clique no topo da IDE na seta verde, se estiver apenas por linha de comando, use:
 ```bash
